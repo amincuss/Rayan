@@ -1,0 +1,17 @@
+<p-panel>
+  <p-header>
+    Country details
+  </p-header>
+ 
+  <div class="p-d-flex" *ngIf="customer">
+    <div class="p-m-4">Lastname: {{customer.Lastname}}</div>
+    <div class="p-m-4">Firtsname: {{customer.Firstname}}</div>
+    <div class="p-m-4">PhoneNumber: {{customer.PhoneNumber}}</div>
+    <div class="p-m-4">Email: {{customer.Email}}</div>
+    <div class="p-m-4">BankAccountNumber: {{customer.BankAccountNumber}}</div>
+    <div class="p-m-4"> DateOfBirth: {{customer.DateOfBirth}}</div>
+  </div>
+  <p-footer>
+    <a [routerLink]="goBackUrl">Go back</a>
+  </p-footer>
+</p-panel>

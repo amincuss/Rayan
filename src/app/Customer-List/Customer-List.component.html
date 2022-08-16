@@ -1,0 +1,38 @@
+<p-toast></p-toast>
+
+<p-toolbar styleClass="p-mb-4">
+  <ng-template pTemplate="left">
+    <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
+            (click)="openCreateModal()"></button>
+  </ng-template>
+</p-toolbar>
+
+<!--Table-->
+<p-table [value]="customer" [(selection)]="selectedCustomer" selectionMode="single" (onRowSelect)="onRowSelect($event)">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>FirtsName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>PhoneNumber</th>
+      <th>BankAccountNumber</th>
+      <th>Birthday</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-customer>
+    <tr [pSelectableRow]="customer">
+      <td>{{customer.Firstname}}</td>
+      <td>{{customer.Lastname}}</td>
+      <td>{{customer.Email}}</td>
+      <td>{{customer.PhoneNumber}}</td>
+      <td>{{customer.BankAccountNumber}}</td>
+      <td>{{customer.DateOfBirth}}</td>
+      <td>
+        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
+                (click)="openEditModal(customer)"></button>
+        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
+                (click)="deleteCustomer(customer)"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
